@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- DTB go conn payment method (Odoo 20: payment_method_type + payment_provider) -->
+        <record id="go_conn_payment_method_data" model="pos.payment.method">
+            <field name="name">Databank Go connection</field>
+            <field name="type">bank</field>
+            <field name="payment_method_type">terminal</field>
+            <field name="payment_provider">dtb_go_conn</field>
+            <!-- Зөвхөн ШИНЭ суулгацад асаалттай. Хуучин суулгацад (шинэчлэл) талбарын анхдагч утга False. -->
+            <field name="go_conn_settle_on_close" eval="True"/>
+        </record>
+    </data>
+</odoo>

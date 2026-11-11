@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="DtbCardPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <Draggable>
+                <div class="popup dtb-card-dialog">
+                    <header class="title drag-handle">
+                         <span>Card payment</span>
+                    </header>
+                    <p class="class_inv_response_paid" style="display: none;"/>
+                    <p class="class_inv_response_unpaid">Waiting for card read... <span t-esc="props.body.amount"/></p>
+                    <span class="spinner_loader"></span>
+                    <footer class="footer centered">
+                        <div class="button cancel btn-danger" t-on-click="cancelInv">
+                            <t t-esc="props.cancelText" />
+                        </div>
+                        <div class="button btn-primary" t-on-click="checkInv">
+                            <span>Check payment</span>
+                        </div>
+                    </footer>
+                </div>
+            </Draggable>
+
+        </div>
+    </t>
+
+</templates>

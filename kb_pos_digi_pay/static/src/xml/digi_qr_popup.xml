@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="DigiPayQrPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <Draggable>
+                <div class="popup digipay-dialog" style="height: max-content !important;">
+                    <header class="title drag-handle">
+                         <span>DigiPay QR</span>
+                    </header>
+                    <div>
+                        <img class="digipay_class_qr_data" id="digipay_qr"
+                            t-att-src="widget.options.qr_data"/>
+                        <p class="class_inv_response_paid"/>
+                        <p class="class_inv_response_unpaid"/>
+                    </div>
+                    <footer class="footer centered">
+                        <div class="button cancel btn-danger" >
+                            Cancel
+                        </div>
+                        <div class="button confirm btn-primary">
+                            <span>Check payment</span>
+                        </div>
+                    </footer>
+                </div>
+            </Draggable>
+
+        </div>
+    </t>
+
+</templates>

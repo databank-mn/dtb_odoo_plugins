@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/dtb_pos_pass_payment/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/dtb_pos_pass_payment/static/src/js/pass_payment.js"></script>
+            <script type="text/javascript" src="/dtb_pos_pass_payment/static/src/js/pass_qr_popup.js"></script>
+            <script type="text/javascript" src="/dtb_pos_pass_payment/static/src/js/PaymentScreen.js"></script>
+        </xpath>
+        <xpath expr="//link[@id='pos-stylesheet']" position="after">
+            <link rel="stylesheet" href="/dtb_pos_pass_payment/static/src/css/pass.css" />
+        </xpath>
+    </template>
+</odoo>

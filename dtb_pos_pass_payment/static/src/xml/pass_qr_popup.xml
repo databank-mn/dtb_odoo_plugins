@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="PassQrPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <Draggable>
+                <div class="popup pass-dialog">
+                    <header class="title drag-handle">
+                         <span>PASS Scan QR</span>
+                    </header>
+                    <img class="pass_class_qr_data" id="pass_qr"
+                        t-att-src="props.body.qr_data"/>
+                    <p class="class_inv_response_paid" style="display: none;"/>
+                    <p class="class_inv_response_unpaid" style="display: none;"/>
+                    <footer class="footer centered">
+                        <div class="button cancel btn-danger" t-on-click="cancelInv">
+                            <t t-esc="props.cancelText" />
+                        </div>
+                        <div class="button btn-primary" t-on-click="checkInv">
+                            <span>Check payment</span>
+                        </div>
+                    </footer>
+                </div>
+            </Draggable>
+
+        </div>
+    </t>
+
+</templates>

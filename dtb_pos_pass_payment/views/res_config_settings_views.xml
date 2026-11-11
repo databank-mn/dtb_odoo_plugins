@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_pass" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pass</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('app_settings_block')][@data-key='point_of_sale']" position="inside">
+                <h2>PASS integration info</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="row">
+                            <label for="pass_ecommerce_token" string="Pass Ecommerce Token"/>
+                            <field name="pass_ecommerce_token"/>
+                        </div>
+                        <div class="row">
+                            <label for="pass_invoice_create_url" string="Invoice create url"/>
+                            <field name="pass_invoice_create_url"/>
+                        </div>
+                        <div class="row">
+                            <label for="pass_invoice_check_url" string="Invoice check url"/>
+                            <field name="pass_invoice_check_url"/>
+                        </div>
+                        <div class="row">
+                            <label for="pass_invoice_cancel_url" string="Invoice cancel url"/>
+                            <field name="pass_invoice_cancel_url"/>
+                        </div>
+                        <div class="row">
+                            <label for="pass_settlement_url" string="Settlement url"/>
+                            <field name="pass_settlement_url"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pos_session_pass_inherit" model="ir.ui.view">
+        <field name="name">POS Session Pass inherit</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='cash_register_balance_end_real']" position="after">
+                <field name="pass_sale_count"/>
+                <field name="pass_sale_total"/>
+                <field name="pass_void_count"/>
+                <field name="pass_void_total"/>
+                <field name="pass_description"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+*.log
+*.log.*
+*.pot
+*.pyc
+*.bak
+*.egg
+*.sqlite3
+.venv
+.DS_Store
